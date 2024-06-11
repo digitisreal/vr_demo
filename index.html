@@ -25,11 +25,12 @@ AFRAME.registerComponent('ballgen', {
             var posX = Math.random() * 5;
             var posZ = Math.random() * 5;
 
-            newSphere.setAttribute('radius', '1');
+            newSphere.setAttribute('radius', '0.5');
             newSphere.setAttribute('dynamic-body', 'shape: sphere');
             newSphere.setAttribute('color', 'yellow');
             newSphere.setAttribute('position', `${posX} 3 ${posZ}`);
             newSphere.setAttribute('class', 'interact');
+            newSphere.setAttribute('grabbable', '');
 
             scene.appendChild(newSphere);
         })
