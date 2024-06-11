@@ -44,7 +44,7 @@ AFRAME.registerComponent('ballgen', {
     <a-entity position="0.5 0 0" static-body="shape: sphere; sphereRadius: 0.02;" sphere-collider="objects: .interact" super-hands id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
 <a-plane static-body color="green" width="20" height="20" rotation="-90 0 0"></a-plane>
 <a-box color="gray" width="0.5" height="0.5" position="0.5 1 -0.5"></a-box>
-<a-box ballgen color="red" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 -0.5" animation="property: position; to: 0.5 1.15 -0.5; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
+<a-box class='interact' ballgen color="red" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 -0.5" animation="property: position; to: 0.5 1.15 -0.5; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
 
     </a-scene>
 
