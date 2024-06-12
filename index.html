@@ -32,7 +32,7 @@ AFRAME.registerComponent('ballgen', {
             newSphere.setAttribute('radius', '0.25');
             newSphere.setAttribute('dynamic-body', 'shape: sphere');
             newSphere.setAttribute('color', 'yellow');
-            newSphere.setAttribute('position', `-1.75 2 -2`);
+            newSphere.setAttribute('position', `-0.75 2 0`);
             newSphere.setAttribute('class', 'interact');
             newSphere.setAttribute('grabbable', '');
 
@@ -104,20 +104,20 @@ AFRAME.registerComponent('gamereset', {
 <a-sky color="light blue"></a-sky>
 <a-plane static-body color="green" width="20" height="20" rotation="-90 0 0"></a-plane>
 
-<a-box color="gray" width="0.5" height="0.5" position="0.5 1 -0.5"></a-box>
-<a-box class='interact' gamereset color="yellow" width="0.25" height="0.25" depth="0.25" position="0.5 1.05 0" animation="property: position; to: 0.5 1.15 0; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
+<a-box color="gray" width="0.5" height="0.5" position="0.5 1 0"></a-box>
+<a-box class='interact' gamereset color="yellow" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 0" animation="property: position; to: 0.5 1.05 0; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
 
 <a-box color="gray" width="0.5" height="0.5" position="0.5 1 -0.5"></a-box>
 <a-box class='interact' ballgen color="red" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 -0.5" animation="property: position; to: 0.5 1.15 -0.5; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
     
-    <a-box static-body width="0.6" height="0.05" depth="1" color="gray" position="-1.75 1.5 -2" rotation="15 0 0"></a-box>
-    <a-box static-body width="1" height="0.7759" depth="0.08" color="gray" position="-1.747 1.467 -1.4" rotation="15 0 0"></a-box>
+    <a-box static-body width="0.6" height="0.05" depth="1" color="gray" position="-0.75 1.5 0" rotation="15 0 0"></a-box>
+    <a-box static-body width="1" height="0.7759" depth="0.08" color="gray" position="-0.747 1.467 0.6" rotation="15 0 0"></a-box>
 
     <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 3 -3"></a-box>
     <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 2 -3"></a-box>
     <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 1 -3"></a-box>
 
-    <a-box class="coll" width="2" height="0.1" depth="3" color="red" position="0 0.98 -4.625"></a-box>
+    <a-box class="coll" width="15" height="0.1" depth="15" color="red" opacity="0" position="0 0.98 -4.625"></a-box>
 
     <a-plane color="black" scale="1.5 0.5 0.1" position="-2 1.5 -3" >
         <a-text id="sc" value="Score: " position="-0.4 0 0.1"></a-text>
