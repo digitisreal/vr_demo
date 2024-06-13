@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/a-super-sky@1.1.1/super-sky.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -59,7 +59,7 @@ AFRAME.registerComponent('gamereset', {
         button.addEventListener('click', function(){
             let scene = document.querySelector('#scene');
             var x = -0.8;
-            var y = 1.5;
+            var y = 1.2;
             var z = -3;
             pins.forEach(pin => scene.removeChild(pin));
             pins = [];
@@ -68,16 +68,15 @@ AFRAME.registerComponent('gamereset', {
 
             for (var i = 0; i < 3; i++){
                 for (var j = 0; j < 3; j++){
-                    let elem = document.createElement('a-box');
+                    let elem = document.createElement('a-gltf-model');
+                    elem.setAttribute('src', 'beer_bottle/scene.gltf')
                     elem.setAttribute('class', 'pin');
                     elem.setAttribute('id', 'p' + pinNum++);
                     elem.setAttribute('aabb-collider', 'objects: .coll');
                     elem.setAttribute('dynamic-body', '');
-                    elem.setAttribute('width', '0.4');
-                    elem.setAttribute('height', '0.75');
-                    elem.setAttribute('depth', '0.2');
-                    elem.setAttribute('color', 'blue');
+                    elem.setAttribute('scale', '0.015 0.015 0.015');
                     elem.setAttribute('position', `${x} ${y} ${z}`);
+                
 
                     pins.push(elem);
                     x = x + 0.8;
@@ -101,14 +100,16 @@ AFRAME.registerComponent('gamereset', {
 </script>
 
 <body>
-    <a-scene id="scene" physics="debug: true; gravity: -9.8; friction: 0.6; restitution: 0.6">
+    <a-scene id="scene" physics="debug: true; gravity: -9.8; friction: 0.6; restitution: 0.6" fog="type: linear; color: #e8e5e5; far: 15; near: 0.5">
 <a-camera><a-cursor></a-cursor></a-camera>
     <a-entity position="0.5 0 0" static-body="shape: sphere; sphereRadius: 0.02;" sphere-collider="objects: .interact" super-hands id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
-<a-sky color="light blue"></a-sky>
+    <a-entity position="-0.5 0 0" static-body="shape: sphere; sphereRadius: 0.02;" sphere-collider="objects: .interact" super-hands id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
 <a-plane static-body color="green" width="20" height="20" rotation="-90 0 0"></a-plane>
-
+<a-entity environment="preset: arches" shadow="true" groundTexture="squares"></a-entity>
 <a-box color="gray" width="0.5" height="0.5" position="0.5 1 0"></a-box>
 <a-box class='interact' gamereset color="yellow" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 0" animation="property: position; to: 0.5 1.05 0; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
+
+<a-gltf-model src="pallet_racking/scene.gltf" position="0 0.615 -3.151" scale="1 0.963 1"></a-gltf-model>
 
 <a-box color="gray" width="0.5" height="0.5" position="0.5 1 -0.5"></a-box>
 <a-box class='interact' ballgen color="red" width="0.25" height="0.25" depth="0.25" position="0.5 1.15 -0.5" animation="property: position; to: 0.5 1.15 -0.5; duration: 100; startEvents: click; dir: alternate; loop: 1;"></a-box>
@@ -116,9 +117,9 @@ AFRAME.registerComponent('gamereset', {
     <a-box static-body width="0.6" height="0.05" depth="1" color="gray" position="-0.75 1.5 0" rotation="15 0 0"></a-box>
     <a-box static-body width="1" height="0.7759" depth="0.08" color="gray" position="-0.747 1.467 0.6" rotation="15 0 0"></a-box>
 
-    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 3 -3"></a-box>
-    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 2 -3"></a-box>
-    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 1 -3"></a-box>
+    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 3 -3" opacity="0"></a-box>
+    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 2 -3" opacity="0"></a-box>
+    <a-box static-body width="2" height="0.1" depth="0.25" color="red" position="0 1 -3" opacity="0"></a-box>
 
     <a-box class="coll" width="15" height="0.1" depth="15" color="red" opacity="0" position="0 0.98 -4.625"></a-box>
 
