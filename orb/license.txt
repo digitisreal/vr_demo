@@ -1,0 +1,11 @@
+Model Information:
+* title:	Heavy Metal Squiggle Orb-4K-BakeMaterialTest
+* source:	https://sketchfab.com/3d-models/heavy-metal-squiggle-orb-4k-bakematerialtest-54fce29006fc4319bb60cf25a9f320e0
+* author:	chiwei (https://sketchfab.com/chiwei2333)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Heavy Metal Squiggle Orb-4K-BakeMaterialTest" (https://sketchfab.com/3d-models/heavy-metal-squiggle-orb-4k-bakematerialtest-54fce29006fc4319bb60cf25a9f320e0) by chiwei (https://sketchfab.com/chiwei2333) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
